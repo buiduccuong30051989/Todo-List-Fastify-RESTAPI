@@ -10,6 +10,8 @@ import fastifySwaggerUI from "@fastify/swagger-ui";
 const { MongoClient, ServerApiVersion } = require("mongodb");
 import { ConnectOptions } from "mongoose";
 
+const port = process.env.PORT || 3001;
+
 // const uri =
 //     "mongodb+srv://frontendcuong30051989:002Dxpdd2qU2FrRR@cluster0.xkmavbs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const uri = "mongodb+srv://frontendcuong30051989:002Dxpdd2qU2FrRR@cluster0.xkmavbs.mongodb.net/sample_mflix?retryWrites=true&w=majority&appName=Cluster0";
@@ -98,7 +100,7 @@ const start = async (): Promise<void> => {
     try {
         await app.ready();
         app.swagger();
-        await app.listen({ port: config.app.port });
+        await app.listen(port, () => console.log(`Example app listening on port ${port}!`));
     } catch (err) {
         app.log.error(err);
         process.exit(1);

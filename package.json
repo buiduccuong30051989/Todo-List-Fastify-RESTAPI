@@ -2,7 +2,6 @@
   "name": "todo-fastify-api",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=development tsc -p tsconfig.json",
     "start": "cross-env NODE_ENV=development npm run build && node dist/index.js",
