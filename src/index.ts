@@ -1,11 +1,11 @@
-import * as fastify from "fastify";
-import mongoose from "mongoose";
-import routes from "./routes";
-import { Options } from "./config/swagger";
-import { config } from "./config/app";
+const fastify = require("fastify");
+const mongoose = require("mongoose");
+const routes = require("./routes");
+const { Options } = require("./config/swagger");
+const { config } = require("./config/app");
 const env = process.env.NODE_ENV;
-import fastifySwagger from "@fastify/swagger";
-import fastifySwaggerUI from "@fastify/swagger-ui";
+const fastifySwagger = require("@fastify/swagger");
+const fastifySwaggerUI = require("@fastify/swagger-ui");
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
 import { ConnectOptions } from "mongoose";
